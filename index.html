@@ -12,12 +12,13 @@
     Built with love
     and way too many YAML files.
 -->
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arthur Cesare-Herriau</title>
-  <meta name="description" content="DevOps Engineer — Azure, Kubernetes, GitOps, and AI. Building things that ship.">
+  <meta name="description" content="DevOps Engineer — Azure, Kubernetes, GitOps, and AI. Building Thurbox, a TUI agentic IDE.">
+  <meta name="theme-color" content="#15120f">
   <link rel="canonical" href="https://arthur.thurbeen.eu/">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 
@@ -25,17 +26,23 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://arthur.thurbeen.eu/">
   <meta property="og:title" content="Arthur Cesare-Herriau — DevOps Engineer">
-  <meta property="og:description" content="DevOps Engineer — Azure, Kubernetes, GitOps, and AI. Building things that ship.">
+  <meta property="og:description" content="DevOps Engineer — Azure, Kubernetes, GitOps, and AI. Building Thurbox, a TUI agentic IDE.">
   <meta property="og:image" content="https://arthur.thurbeen.eu/img/llama.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Arthur Cesare-Herriau — DevOps Engineer">
-  <meta name="twitter:description" content="DevOps Engineer — Azure, Kubernetes, GitOps, and AI. Building things that ship.">
+  <meta name="twitter:description" content="DevOps Engineer — Azure, Kubernetes, GitOps, and AI. Building Thurbox, a TUI agentic IDE.">
   <meta name="twitter:image" content="https://arthur.thurbeen.eu/img/llama.png">
 
+  <!-- AT Protocol identity -->
+  <link rel="me" href="https://bsky.app/profile/magicletur.eurosky.social">
+  <link rel="me" href="https://sifa.id/p/arthurcesare.eurosky.social">
+
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://public.api.bsky.app" crossorigin>
+  <!-- Fonts are self-hosted (see @font-face in style.css); preload the two that
+       paint above the fold so the arcade chrome doesn't swap in late. -->
+  <link rel="preload" href="assets/fonts/press-start-2p-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
   <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body>
@@ -44,32 +51,31 @@
     <div class="container nav-inner">
       <a href="index.html" class="nav-name">🦙 ACH</a>
       <div class="nav-links">
-        <a href="index.html" class="nav-page active">Home</a>
-        <a href="thoughts.html" class="nav-page">Thoughts</a>
-        <a href="https://github.com/LeTuR" target="_blank" rel="noopener" class="nav-external">GitHub</a>
-        <a href="https://www.linkedin.com/in/arthur-cesar%C3%A9-herriau-a4a017153/" target="_blank" rel="noopener" class="nav-external">LinkedIn</a>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-        </button>
+        <a href="#projects">Projects</a>
+        <a href="#bluesky">Posts</a>
+        <a href="#elsewhere">Elsewhere</a>
+        <a href="https://thurbox.thurbeen.eu/" target="_blank" rel="noopener">Thurbox</a>
+        <a href="https://github.com/LeTuR" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://sifa.id/p/arthurcesare.eurosky.social" target="_blank" rel="noopener">Sifa</a>
       </div>
     </div>
   </nav>
 
   <header>
     <div class="container header-inner">
-      <div class="header-text">
-        <p class="eyebrow">⚡ DevOps Engineer</p>
-        <h1>Arthur Cesare&#8209;Herriau</h1>
-        <p class="hero-text">I build and ship cloud infrastructure, deploy AI-powered applications at scale, and tinker with side projects on evenings and weekends. Currently working at <strong>Metyis</strong> in Paris. 🇫🇷</p>
-        <div class="hero-tags">
-          <span>☁️ Azure</span>
-          <span>☸️ Kubernetes</span>
-          <span>🔄 GitOps</span>
-          <span>🚀 CI/CD</span>
-          <span>🤖 AI</span>
-        </div>
-        <a href="thoughts.html" class="hero-cta">💭 Read my thoughts &rarr;</a>
+      <p class="eyebrow">⚡ DevOps Engineer</p>
+      <h1>Arthur Cesare&#8209;Herriau</h1>
+      <p class="hero-text">I build and ship cloud infrastructure, deploy AI-powered applications at scale, and spend my evenings building <strong>Thurbox</strong> — a TUI agentic IDE for running coding agents in parallel. Currently at <strong>Metyis</strong> in Paris. 🇫🇷</p>
+      <div class="hero-tags">
+        <span>☁️ Azure</span>
+        <span>☸️ Kubernetes</span>
+        <span>🔄 GitOps</span>
+        <span>🚀 CI/CD</span>
+        <span>🤖 AI</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="https://thurbox.thurbeen.eu/" target="_blank" rel="noopener" class="btn btn-primary">🤖 See Thurbox</a>
+        <a href="#bluesky" class="btn btn-secondary">🦋 Latest posts</a>
       </div>
     </div>
   </header>
@@ -79,8 +85,7 @@
     <section id="terminal">
       <div class="container">
         <div class="term-widget">
-          <div class="term-chrome">
-            <div class="term-bar"><span></span><span></span><span></span></div>
+          <div class="term-header">
             <span class="term-title">ach@portfolio:~</span>
           </div>
           <div class="term-body" id="termBody">
@@ -88,8 +93,129 @@
           </div>
           <div class="term-input-row">
             <span class="t-prompt">ach@portfolio:~$&nbsp;</span>
-            <input type="text" id="termInput" class="term-input" autocomplete="off" spellcheck="false">
+            <input type="text" id="termInput" class="term-input" autocomplete="off" spellcheck="false" aria-label="Terminal input">
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="reveal">🛠️ Main Project</h2>
+
+        <div class="project-feature reveal">
+          <div class="project-feature-media">
+            <div class="feature-terminal">
+              <div class="term-header">
+                <span class="term-title">thurbox</span>
+              </div>
+              <div class="feature-terminal-body">
+<code><span class="t-prompt">$</span> thurbox <span class="t-flag">--sessions</span> 4</code>
+<code><span class="t-ok">✔</span> alpha  <span class="t-dim">claude-code  worktree:feat/auth</span></code>
+<code><span class="t-ok">✔</span> beta   <span class="t-dim">codex        worktree:fix/cache</span></code>
+<code><span class="t-run">▶</span> gamma  <span class="t-dim">opencode     running...</span></code>
+<code><span class="t-dim">·</span> delta  <span class="t-dim">aider        idle</span></code>
+              </div>
+            </div>
+          </div>
+          <div class="project-feature-text">
+            <p class="project-feature-eyebrow">Active · Rust</p>
+            <h3><a href="https://thurbox.thurbeen.eu/" target="_blank" rel="noopener">🤖 Thurbox</a></h3>
+            <p>A TUI agentic IDE. Run Claude Code, Codex, opencode, aider — or any CLI agent you define — side by side in persistent tmux panes that survive crashes and restarts.</p>
+            <ul class="feature-points">
+              <li>Sessions, agents and git worktrees as first-class citizens</li>
+              <li>Built-in MCP server so agents can drive Thurbox itself</li>
+              <li>SQLite-backed state, extensions for Jira, Linear, GitHub &amp; more</li>
+            </ul>
+            <div class="feature-ctas">
+              <a href="https://thurbox.thurbeen.eu/" target="_blank" rel="noopener" class="btn btn-primary">Website</a>
+              <a href="https://github.com/Thurbeen/thurbox" target="_blank" rel="noopener" class="btn btn-secondary">Source</a>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="reveal">🧪 Also tinkering with</h2>
+        <div class="projects-grid">
+
+          <div class="project-card reveal">
+            <div class="project-visual visual-cluster">
+              <div class="node-grid">
+                <div class="node active"></div><div class="node"></div><div class="node active"></div><div class="node"></div><div class="node active"></div>
+                <div class="node"></div><div class="node active"></div><div class="node"></div><div class="node active"></div><div class="node"></div>
+                <div class="node active"></div><div class="node"></div><div class="node active"></div><div class="node"></div><div class="node active"></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <h3>🏠 Home Lab</h3>
+                <span class="project-badge">Since 2019</span>
+              </div>
+              <p class="project-desc">Bare metal Kubernetes cluster on Talos Linux with full GitOps. ArgoCD reconciles everything from Git.</p>
+              <div class="project-tags"><span>Talos</span><span>Kubernetes</span><span>ArgoCD</span><span>Terraform</span></div>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-visual visual-kube">
+              <code><span class="t-prompt">$</span> kubectl get claudecodejobs</code>
+              <code><span class="t-dim">NAME</span>            <span class="t-dim">STATUS</span>    <span class="t-dim">AGE</span></code>
+              <code><span class="t-attr">refactor-api</span>    <span class="t-ok">Running</span>   <span class="t-dim">4m</span></code>
+              <code><span class="t-attr">fix-auth</span>        <span class="t-ok">Running</span>   <span class="t-dim">2m</span></code>
+              <code><span class="t-attr">add-tests</span>       <span class="t-run">Pending</span>   <span class="t-dim">10s</span></code>
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <h3><a href="https://github.com/Thurbeen/thurkube" target="_blank" rel="noopener">☸️ Thurkube</a></h3>
+                <span class="project-badge">Active</span>
+              </div>
+              <p class="project-desc">Kubernetes controller for orchestrating Claude Code agents through a ClaudeCodeJob custom resource.</p>
+              <div class="project-tags"><span>Rust</span><span>Kubernetes</span><span>CRD</span></div>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-visual visual-rpg">
+              <div class="rpg-scene">
+                <div class="rpg-grid">
+                  <div class="tile grass"></div><div class="tile grass"></div><div class="tile mountain"></div><div class="tile grass"></div><div class="tile water"></div>
+                  <div class="tile grass"></div><div class="tile unit-ally"></div><div class="tile grass"></div><div class="tile grass"></div><div class="tile grass"></div>
+                  <div class="tile forest"></div><div class="tile grass"></div><div class="tile grass highlight"></div><div class="tile unit-enemy"></div><div class="tile grass"></div>
+                </div>
+                <div class="rpg-hud">
+                  <span class="hud-hp">❤️ 18/20</span>
+                  <span class="hud-turn">⚔️ Turn 3</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <h3>⚔️ Peon Tactics</h3>
+                <span class="project-badge">Learning</span>
+              </div>
+              <p class="project-desc">Hex-based tactical RPG with turn-based combat and character progression. Game dev from scratch.</p>
+              <div class="project-tags"><span>Godot 4</span><span>GDScript</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="bluesky">
+      <div class="container">
+        <h2 class="reveal">🦋 Latest posts</h2>
+        <div class="feed-head reveal">
+          <p class="section-note" style="margin:0">Straight from the AT Protocol — no tracking scripts, no embeds, just the public API.</p>
+          <p class="feed-handle"><a href="https://bsky.app/profile/magicletur.eurosky.social" target="_blank" rel="noopener">@magicletur.eurosky.social</a></p>
+        </div>
+        <div id="skyFeed" class="sky-grid reveal">
+          <p class="sky-status">Loading posts from Bluesky…</p>
+        </div>
+        <noscript>
+          <p class="sky-status">Posts load from the Bluesky API with JavaScript. <a href="https://bsky.app/profile/magicletur.eurosky.social" target="_blank" rel="noopener">Read them on bsky.app</a>.</p>
+        </noscript>
+        <div class="sky-more reveal">
+          <a href="https://bsky.app/profile/magicletur.eurosky.social" target="_blank" rel="noopener" class="btn btn-secondary">All posts on Bluesky</a>
         </div>
       </div>
     </section>
@@ -127,124 +253,6 @@
       </div>
     </section>
 
-    <section id="projects">
-      <div class="container">
-        <h2 class="reveal">🛠️ Personal Projects</h2>
-        <div class="projects-grid">
-
-          <div class="project-card featured reveal">
-            <div class="project-visual visual-terminal">
-              <div class="term-bar"><span></span><span></span><span></span></div>
-              <code><span class="t-prompt">$</span> thurbox <span class="t-flag">--sessions</span> 4</code>
-              <code><span class="t-ok">✔</span> Session alpha <span class="t-dim">worktree:feat/auth</span></code>
-              <code><span class="t-ok">✔</span> Session beta  <span class="t-dim">worktree:fix/cache</span></code>
-              <code><span class="t-run">▶</span> Session gamma <span class="t-dim">running...</span></code>
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <h3><a href="https://thurbox.thurbeen.eu/">🤖 Thurbox</a></h3>
-                <span class="project-badge">Active</span>
-              </div>
-              <p class="project-desc">Multi-session Claude Code orchestrator. A terminal UI for running parallel AI coding agents with persistent sessions, git worktree isolation, and MCP server.</p>
-              <div class="project-tags"><span>Rust</span><span>Ratatui</span><span>SQLite</span><span>MCP</span></div>
-            </div>
-          </div>
-
-          <div class="project-card reveal">
-            <div class="project-visual visual-cluster">
-              <div class="node-grid">
-                <div class="node active"></div><div class="node"></div><div class="node active"></div><div class="node"></div><div class="node active"></div>
-                <div class="node"></div><div class="node active"></div><div class="node"></div><div class="node active"></div><div class="node"></div>
-                <div class="node active"></div><div class="node"></div><div class="node active"></div><div class="node"></div><div class="node active"></div>
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <h3>🏠 Home Lab</h3>
-                <span class="project-badge">Since 2019</span>
-              </div>
-              <p class="project-desc">Bare metal Kubernetes cluster on Talos Linux with full GitOps. ArgoCD reconciles everything from Git: Traefik, Longhorn, cert-manager, Cilium, and more.</p>
-              <div class="project-tags"><span>Talos</span><span>Kubernetes</span><span>ArgoCD</span><span>Terraform</span><span>Cilium</span></div>
-            </div>
-          </div>
-
-          <div class="project-card reveal">
-            <div class="project-visual visual-kube">
-              <code><span class="t-prompt">$</span> kubectl get claudecodejobs</code>
-              <code><span class="t-dim">NAME</span>            <span class="t-dim">STATUS</span>    <span class="t-dim">AGE</span></code>
-              <code><span class="t-attr">refactor-api</span>    <span class="t-ok">Running</span>   <span class="t-dim">4m</span></code>
-              <code><span class="t-attr">fix-auth</span>        <span class="t-ok">Running</span>   <span class="t-dim">2m</span></code>
-              <code><span class="t-attr">add-tests</span>       <span class="t-run">Pending</span>   <span class="t-dim">10s</span></code>
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <h3><a href="https://github.com/Thurbeen/thurkube">☸️ Thurkube</a></h3>
-                <span class="project-badge">Active</span>
-              </div>
-              <p class="project-desc">Kubernetes controller for orchestrating Claude Code agents. Define a ClaudeCodeJob custom resource and the controller handles scheduling, config injection, persistence, and lifecycle.</p>
-              <div class="project-tags"><span>Rust</span><span>Kubernetes</span><span>CRD</span><span>Controller</span></div>
-            </div>
-          </div>
-
-          <div class="project-card reveal">
-            <div class="project-visual visual-rpg">
-              <div class="rpg-scene">
-                <div class="rpg-grid">
-                  <div class="tile grass"></div><div class="tile grass"></div><div class="tile mountain"></div><div class="tile grass"></div><div class="tile water"></div>
-                  <div class="tile grass"></div><div class="tile unit-ally"></div><div class="tile grass"></div><div class="tile grass"></div><div class="tile grass"></div>
-                  <div class="tile forest"></div><div class="tile grass"></div><div class="tile grass highlight"></div><div class="tile unit-enemy"></div><div class="tile grass"></div>
-                  <div class="tile grass"></div><div class="tile grass"></div><div class="tile forest"></div><div class="tile grass"></div><div class="tile mountain"></div>
-                </div>
-                <div class="rpg-hud">
-                  <span class="hud-hp">❤️ 18/20</span>
-                  <span class="hud-turn">⚔️ Turn 3</span>
-                </div>
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <h3>⚔️ Peon Tactics</h3>
-                <span class="project-badge">Active</span>
-              </div>
-              <p class="project-desc">Hex-based tactical RPG with turn-based combat and character progression. Learning game development from scratch.</p>
-              <div class="project-tags"><span>Godot 4</span><span>GDScript</span></div>
-            </div>
-          </div>
-
-          <div class="project-card reveal">
-            <div class="project-visual visual-code">
-              <code><span class="t-dim">&lt;!</span><span class="t-tag">DOCTYPE</span> <span class="t-attr">html</span><span class="t-dim">&gt;</span></code>
-              <code><span class="t-dim">&lt;</span><span class="t-tag">html</span> <span class="t-attr">data-theme</span>=<span class="t-str">"dark"</span><span class="t-dim">&gt;</span></code>
-              <code>  <span class="t-dim">&lt;</span><span class="t-tag">head</span><span class="t-dim">&gt;</span></code>
-              <code>    <span class="t-dim">&lt;</span><span class="t-tag">title</span><span class="t-dim">&gt;</span><span class="t-str">ACH 🦙</span><span class="t-dim">&lt;/</span><span class="t-tag">title</span><span class="t-dim">&gt;</span></code>
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <h3>🌐 This Website</h3>
-              </div>
-              <p class="project-desc">Static HTML/CSS deployed straight to GitHub Pages via GitHub Actions. No build step, no framework &mdash; just fast, versioned, and free.</p>
-              <div class="project-tags"><span>HTML</span><span>CSS</span><span>GitHub Actions</span><span>GitHub Pages</span></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="github">
-      <div class="container">
-        <h2 class="reveal">📊 GitHub Activity</h2>
-        <div class="github-grid reveal">
-          <img src="https://ghchart.rshah.org/0ea5a5/LeTuR" alt="GitHub contribution chart" class="gh-chart">
-          <div class="gh-stats">
-            <a href="https://github.com/LeTuR" target="_blank" rel="noopener" class="gh-link">
-              <img src="https://github-readme-stats.vercel.app/api?username=LeTuR&show_icons=true&hide_title=true&hide_border=true&bg_color=00000000&text_color=8b949e&icon_color=0ea5a5&hide_rank=true&include_all_commits=true" alt="GitHub stats" class="gh-stats-img">
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="stack">
       <div class="container">
         <h2 class="reveal">🧰 Tech stack</h2>
@@ -272,6 +280,20 @@
           <div class="stack-category">
             <h3>🐧 OS</h3>
             <div class="stack-tags"><span>Arch Linux</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="github">
+      <div class="container">
+        <h2 class="reveal">📊 GitHub Activity</h2>
+        <div class="github-grid reveal">
+          <img src="https://ghchart.rshah.org/ff5c54/LeTuR" alt="GitHub contribution chart" class="gh-chart" loading="lazy">
+          <div class="gh-stats">
+            <a href="https://github.com/LeTuR" target="_blank" rel="noopener">
+              <img src="https://github-readme-stats.vercel.app/api?username=LeTuR&show_icons=true&hide_title=true&hide_border=true&bg_color=00000000&text_color=a0a0a0&icon_color=ff5c54&title_color=ff5c54&hide_rank=true&include_all_commits=true" alt="GitHub stats" class="gh-stats-img" loading="lazy">
+            </a>
           </div>
         </div>
       </div>
@@ -309,52 +331,271 @@
       </div>
     </section>
 
+    <section id="elsewhere">
+      <div class="container">
+        <h2 class="reveal">🔗 Elsewhere</h2>
+        <p class="section-note reveal">I keep my professional identity on the AT Protocol these days — Sifa is the canonical one.</p>
+        <div class="links-grid">
+
+          <a href="https://sifa.id/p/arthurcesare.eurosky.social" target="_blank" rel="noopener me" class="link-card primary reveal">
+            <span class="link-icon">🪪</span>
+            <span class="link-body">
+              <h3>Sifa — professional profile</h3>
+              <p>Career, skills, certifications and education. Owned by me, portable, built on AT Protocol.</p>
+              <span class="link-proto">AT Protocol</span>
+            </span>
+          </a>
+
+          <a href="https://bsky.app/profile/magicletur.eurosky.social" target="_blank" rel="noopener me" class="link-card reveal">
+            <span class="link-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/></svg>
+            </span>
+            <span class="link-body">
+              <h3>Bluesky</h3>
+              <p>Where I actually post — notes on agentic dev, Kubernetes, and whatever I broke last night.</p>
+              <span class="link-proto">AT Protocol</span>
+            </span>
+          </a>
+
+          <a href="https://github.com/LeTuR" target="_blank" rel="noopener me" class="link-card reveal">
+            <span class="link-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </span>
+            <span class="link-body">
+              <h3>GitHub</h3>
+              <p>Thurbox, Thurkube, home lab manifests and a graveyard of half-finished experiments.</p>
+              <span class="link-proto muted">Code</span>
+            </span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/arthur-cesar%C3%A9-herriau-a4a017153/" target="_blank" rel="noopener" class="link-card reveal">
+            <span class="link-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+            </span>
+            <span class="link-body">
+              <h3>LinkedIn</h3>
+              <p>Still there, still mirrored — but Sifa is the profile I keep up to date.</p>
+              <span class="link-proto muted">Legacy</span>
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
     <div class="container footer-inner">
       <p>Arthur Cesare-Herriau — 2026</p>
       <div class="footer-arch">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="arch-logo"><path d="M12 0C9.62 4.46 8.41 7.13 7 10.2c1.53 1.32 3.22 2.2 5 2.7 1.78-.5 3.47-1.38 5-2.7C15.59 7.13 14.38 4.46 12 0zM5.77 13.36C4.15 16.77 2.08 20.48 0 24c3.72-2.27 6.58-4.1 8.83-6.46-1.2-.83-2.2-2.1-3.06-4.18zm12.46 0c-.86 2.08-1.86 3.35-3.06 4.18C17.42 19.9 20.28 21.73 24 24c-2.08-3.52-4.15-7.23-5.77-10.64z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="arch-logo" aria-hidden="true"><path d="M12 0C9.62 4.46 8.41 7.13 7 10.2c1.53 1.32 3.22 2.2 5 2.7 1.78-.5 3.47-1.38 5-2.7C15.59 7.13 14.38 4.46 12 0zM5.77 13.36C4.15 16.77 2.08 20.48 0 24c3.72-2.27 6.58-4.1 8.83-6.46-1.2-.83-2.2-2.1-3.06-4.18zm12.46 0c-.86 2.08-1.86 3.35-3.06 4.18C17.42 19.9 20.28 21.73 24 24c-2.08-3.52-4.15-7.23-5.77-10.64z"/></svg>
         <span>Made with Arch Linux, btw.</span>
       </div>
       <p>🇫🇷 French · 🇬🇧 English · 🇪🇸 Spanish</p>
     </div>
   </footer>
 
-  <script>
-    /* Theme toggle */
-    function toggleTheme() {
-      const html = document.documentElement;
-      html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('theme', html.dataset.theme);
-    }
-    const saved = localStorage.getItem('theme');
-    if (saved) document.documentElement.dataset.theme = saved;
-    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.dataset.theme = 'dark';
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">▲</button>
 
-    /* Scroll reveal */
-    const reveals = document.querySelectorAll('.reveal');
+  <!-- HUD status bar (decorative game chrome) -->
+  <div class="hud-bar" aria-hidden="true" role="presentation">
+    <span class="hud-bar__seg">
+      <span class="hud-bar__live"></span>
+      <span class="k">System</span>
+      <span class="v">Online</span>
+    </span>
+    <span class="hud-bar__seg hud-bar__seg--hide-sm">
+      <span class="k">Role</span>
+      <span class="v">DevOps</span>
+    </span>
+    <span class="hud-bar__seg hud-bar__seg--hide-sm">
+      <span class="k">Stack</span>
+      <span class="v">Azure/K8s</span>
+    </span>
+    <span class="hud-bar__seg">
+      <span class="k">Loc</span>
+      <span class="v">Paris</span>
+    </span>
+  </div>
+
+  <script>
+    /* ── Scroll reveal ─────────────────────────────────────── */
     const revealObs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => revealObs.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-    /* Hero tags stagger */
+    /* ── Live-panel CRT sweep ──────────────────────────────────
+       The sweep is paused in CSS by default. There is no CSS way to key
+       animation-play-state off viewport position, so an observer adds
+       .is-live. Pausing rather than stopping preserves the phase across
+       re-entry. */
+    const sweepPanels = document.querySelectorAll('.term-widget, .feature-terminal, .project-visual');
+    if (sweepPanels.length && 'IntersectionObserver' in window) {
+      const sweepObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => e.target.classList.toggle('is-live', e.isIntersecting));
+      }, { threshold: 0 });
+      sweepPanels.forEach(p => sweepObs.observe(p));
+    }
+
+    /* ── Hero tags stagger ─────────────────────────────────── */
     document.querySelectorAll('.hero-tags span').forEach((tag, i) => {
       tag.style.animationDelay = `${i * 0.1}s`;
     });
 
-    /* Interactive terminal */
+    /* ── Back to top ───────────────────────────────────────── */
+    const backToTop = document.getElementById('backToTop');
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 600);
+    }, { passive: true });
+
+    /* ── Bluesky feed (public AT Protocol AppView, no auth) ── */
+    const BSKY_HANDLE = 'magicletur.eurosky.social';
+    const BSKY_LIMIT = 6;
+
+    const esc = (s) => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    function safeUrl(u) {
+      try {
+        const parsed = new URL(u);
+        return (parsed.protocol === 'https:' || parsed.protocol === 'http:') ? parsed.href : null;
+      } catch { return null; }
+    }
+
+    /* Facets index into UTF-8 bytes, not JS string offsets. */
+    function richText(record) {
+      const text = record.text || '';
+      const bytes = new TextEncoder().encode(text);
+      const dec = new TextDecoder();
+      const facets = (record.facets || []).slice().sort((a, b) => a.index.byteStart - b.index.byteStart);
+      let out = '', cursor = 0;
+
+      for (const facet of facets) {
+        const { byteStart, byteEnd } = facet.index;
+        if (byteStart < cursor || byteEnd > bytes.length) continue;
+        out += esc(dec.decode(bytes.slice(cursor, byteStart)));
+        const segment = dec.decode(bytes.slice(byteStart, byteEnd));
+        const feature = (facet.features || [])[0] || {};
+        let href = null;
+        if (feature.$type === 'app.bsky.richtext.facet#link') href = safeUrl(feature.uri);
+        else if (feature.$type === 'app.bsky.richtext.facet#mention') href = `https://bsky.app/profile/${encodeURIComponent(feature.did)}`;
+        else if (feature.$type === 'app.bsky.richtext.facet#tag') href = `https://bsky.app/hashtag/${encodeURIComponent(feature.tag)}`;
+        out += href
+          ? `<a href="${esc(href)}" target="_blank" rel="noopener nofollow ugc">${esc(segment)}</a>`
+          : esc(segment);
+        cursor = byteEnd;
+      }
+
+      out += esc(dec.decode(bytes.slice(cursor)));
+      return out;
+    }
+
+    function relTime(iso) {
+      const then = new Date(iso);
+      const diff = (then - new Date()) / 1000;
+      const units = [['year', 31536000], ['month', 2592000], ['week', 604800], ['day', 86400], ['hour', 3600], ['minute', 60]];
+      const fmt = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+      for (const [unit, secs] of units) {
+        if (Math.abs(diff) >= secs) return fmt.format(Math.round(diff / secs), unit);
+      }
+      return fmt.format(Math.round(diff), 'second');
+    }
+
+    function embedMarkup(embed) {
+      if (!embed) return '';
+      const type = embed.$type || '';
+
+      if (type.startsWith('app.bsky.embed.recordWithMedia')) return embedMarkup(embed.media);
+
+      if (type.startsWith('app.bsky.embed.external')) {
+        const ext = embed.external || {};
+        const href = safeUrl(ext.uri);
+        if (!href) return '';
+        let host = '';
+        try { host = new URL(href).hostname.replace(/^www\./, ''); } catch { /* keep empty */ }
+        return `<a class="sky-embed" href="${esc(href)}" target="_blank" rel="noopener nofollow ugc">
+            <span class="sky-embed-title">${esc(ext.title || href)}</span>
+            ${ext.description ? `<span class="sky-embed-desc">${esc(ext.description)}</span>` : ''}
+            ${host ? `<span class="sky-embed-host">${esc(host)}</span>` : ''}
+          </a>`;
+      }
+
+      if (type.startsWith('app.bsky.embed.images')) {
+        const images = (embed.images || []).slice(0, 4)
+          .map(img => {
+            const src = safeUrl(img.thumb);
+            return src ? `<img src="${esc(src)}" alt="${esc(img.alt || 'Bluesky post image')}" loading="lazy">` : '';
+          })
+          .join('');
+        return images ? `<div class="sky-images">${images}</div>` : '';
+      }
+
+      return '';
+    }
+
+    function postMarkup(post) {
+      const record = post.record || {};
+      const rkey = String(post.uri || '').split('/').pop();
+      const permalink = `https://bsky.app/profile/${encodeURIComponent(post.author.handle)}/post/${encodeURIComponent(rkey)}`;
+      const created = record.createdAt || post.indexedAt;
+      const text = richText(record);
+
+      return `<article class="sky-post">
+          <div class="sky-meta">
+            <svg class="sky-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/></svg>
+            <span>@${esc(post.author.handle)}</span>
+            <time datetime="${esc(created)}">${esc(relTime(created))}</time>
+          </div>
+          ${text ? `<div class="sky-text">${text}</div>` : ''}
+          ${embedMarkup(post.embed)}
+          <div class="sky-foot">
+            <span>♥ ${Number(post.likeCount || 0)}</span>
+            <span>↺ ${Number(post.repostCount || 0)}</span>
+            <span>💬 ${Number(post.replyCount || 0)}</span>
+            <a class="sky-open" href="${esc(permalink)}" target="_blank" rel="noopener">Open →</a>
+          </div>
+        </article>`;
+    }
+
+    async function loadBluesky() {
+      const container = document.getElementById('skyFeed');
+      const endpoint = 'https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed'
+        + `?actor=${encodeURIComponent(BSKY_HANDLE)}&limit=20&filter=posts_no_replies`;
+
+      try {
+        const res = await fetch(endpoint, { headers: { Accept: 'application/json' } });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+
+        const posts = (data.feed || [])
+          .filter(item => !item.reason)       // skip reposts — own posts only
+          .map(item => item.post)
+          .filter(post => post && post.author && (post.record?.text || post.embed))
+          .slice(0, BSKY_LIMIT);
+
+        if (!posts.length) throw new Error('empty feed');
+        container.innerHTML = posts.map(postMarkup).join('');
+      } catch (err) {
+        container.innerHTML = `<p class="sky-status">Couldn't reach the Bluesky API right now. `
+          + `<a href="https://bsky.app/profile/${BSKY_HANDLE}" target="_blank" rel="noopener">Read the posts on bsky.app</a>.</p>`;
+      }
+    }
+
+    loadBluesky();
+
+    /* ── Interactive terminal ──────────────────────────────── */
     const termBody = document.getElementById('termBody');
     const termInput = document.getElementById('termInput');
     const commands = {
-      help: () => `Available commands:\n  <span class="t-prompt">whoami</span>    — About me\n  <span class="t-prompt">skills</span>    — Tech stack\n  <span class="t-prompt">projects</span>  — Current projects\n  <span class="t-prompt">contact</span>   — How to reach me\n  <span class="t-prompt">neofetch</span>  — System info 🦙\n  <span class="t-prompt">sudo rm -rf /</span> — Don't.\n  <span class="t-prompt">clear</span>     — Clear terminal`,
-      whoami: () => `🦙 Arthur Cesare-Herriau\n⚡ DevOps Engineer @ Metyis — Paris\n🎓 ENSEIRB-MATMECA — Electrical Engineering & Robotics\n🏠 Home lab enthusiast since 2019\n🐧 I use Arch, btw.`,
+      help: () => `Available commands:\n  <span class="t-prompt">whoami</span>    — About me\n  <span class="t-prompt">skills</span>    — Tech stack\n  <span class="t-prompt">projects</span>  — Current projects\n  <span class="t-prompt">posts</span>     — Latest Bluesky posts\n  <span class="t-prompt">contact</span>   — How to reach me\n  <span class="t-prompt">neofetch</span>  — System info 🦙\n  <span class="t-prompt">sudo rm -rf /</span> — Don't.\n  <span class="t-prompt">clear</span>     — Clear terminal`,
+      whoami: () => `🦙 Arthur Cesare-Herriau\n⚡ DevOps Engineer @ Metyis — Paris\n🎓 ENSEIRB-MATMECA — Electrical Engineering & Robotics\n🤖 Building Thurbox, a TUI agentic IDE\n🐧 I use Arch, btw.`,
       skills: () => `💻 <span class="t-attr">Languages:</span>  Python, Rust, Shell, TypeScript, YAML\n☁️ <span class="t-attr">Cloud:</span>      Azure, Kubernetes, Docker, Terraform\n🔄 <span class="t-attr">CI/CD:</span>      GitHub Actions, GitLab CI, ArgoCD\n🤖 <span class="t-attr">AI:</span>         Claude Code, Azure OpenAI, MCP\n🐧 <span class="t-attr">OS:</span>         Arch Linux (btw.)`,
-      projects: () => `🤖 <a href="https://thurbox.thurbeen.eu/" target="_blank">Thurbox</a>       — Multi-session Claude Code orchestrator (Rust)\n☸️ <a href="https://github.com/Thurbeen/thurkube" target="_blank">Thurkube</a>      — K8s controller for Claude Code agents (Rust)\n🏠 Home Lab      — Talos K8s cluster, full GitOps\n⚔️ Peon Tactics   — Hex tactical RPG (Godot 4)\n🌐 This Website  — HTML/CSS, GitHub Pages, GitHub Actions`,
-      contact: () => `🔗 <a href="https://www.linkedin.com/in/arthur-cesar%C3%A9-herriau-a4a017153/" target="_blank">LinkedIn</a>\n🐙 <a href="https://github.com/LeTuR" target="_blank">GitHub</a>`,
-      neofetch: () => `<span class="t-prompt">        /\\        </span>  <span class="t-attr">ach</span>@<span class="t-attr">portfolio</span>\n<span class="t-prompt">       /  \\       </span>  ──────────────\n<span class="t-prompt">      / 🦙 \\      </span>  <span class="t-attr">OS:</span> Arch Linux x86_64\n<span class="t-prompt">     /      \\     </span>  <span class="t-attr">Host:</span> Talos K8s Cluster\n<span class="t-prompt">    /   Arch  \\    </span>  <span class="t-attr">Kernel:</span> 6.19.9-arch1-1\n<span class="t-prompt">   /    Linux  \\   </span>  <span class="t-attr">Shell:</span> zsh 5.9\n<span class="t-prompt">  /     btw.    \\  </span>  <span class="t-attr">Editor:</span> Claude Code 🤖\n<span class="t-prompt"> /_______________\\ </span>  <span class="t-attr">Theme:</span> Thurarch Llama 🦙`,
+      projects: () => `🤖 <a href="https://thurbox.thurbeen.eu/" target="_blank">Thurbox</a>       — TUI agentic IDE, my main project (Rust)\n☸️ <a href="https://github.com/Thurbeen/thurkube" target="_blank">Thurkube</a>      — K8s controller for Claude Code agents (Rust)\n🏠 Home Lab      — Talos K8s cluster, full GitOps\n⚔️ Peon Tactics   — Hex tactical RPG (Godot 4)`,
+      posts: () => { document.getElementById('bluesky').scrollIntoView({ behavior: 'smooth' }); return `🦋 Scrolling to the latest posts from <a href="https://bsky.app/profile/magicletur.eurosky.social" target="_blank">@magicletur.eurosky.social</a>...`; },
+      contact: () => `🪪 <a href="https://sifa.id/p/arthurcesare.eurosky.social" target="_blank">Sifa</a>         — @arthurcesare.eurosky.social (AT Protocol)\n🦋 <a href="https://bsky.app/profile/magicletur.eurosky.social" target="_blank">Bluesky</a>      — @magicletur.eurosky.social\n🐙 <a href="https://github.com/LeTuR" target="_blank">GitHub</a>       — LeTuR\n💼 <a href="https://www.linkedin.com/in/arthur-cesar%C3%A9-herriau-a4a017153/" target="_blank">LinkedIn</a>     — legacy, but still alive`,
+      neofetch: () => `<span class="t-tag">        /\\        </span>  <span class="t-attr">ach</span>@<span class="t-attr">portfolio</span>\n<span class="t-tag">       /  \\       </span>  ──────────────\n<span class="t-tag">      / 🦙 \\      </span>  <span class="t-attr">OS:</span> Arch Linux x86_64\n<span class="t-tag">     /      \\     </span>  <span class="t-attr">Host:</span> Talos K8s Cluster\n<span class="t-tag">    /   Arch  \\    </span>  <span class="t-attr">Kernel:</span> 6.19.9-arch1-1\n<span class="t-tag">   /    Linux  \\   </span>  <span class="t-attr">Shell:</span> zsh 5.9\n<span class="t-tag">  /     btw.    \\  </span>  <span class="t-attr">Editor:</span> Thurbox 🤖\n<span class="t-tag"> /_______________\\ </span>  <span class="t-attr">Theme:</span> Thurarch Doom 🔥`,
       'sudo rm -rf /': () => `<span class="t-tag">🚨 Nice try.</span> The llama is watching. 🦙👀`,
       clear: () => 'CLEAR',
     };
@@ -365,13 +606,11 @@
       termInput.value = '';
       if (!cmd) return;
 
-      // Echo command
       const echo = document.createElement('div');
       echo.className = 'term-line';
-      echo.innerHTML = `<span class="t-prompt">ach@portfolio:~$</span> ${cmd}`;
+      echo.innerHTML = `<span class="t-prompt">ach@portfolio:~$</span> ${esc(cmd)}`;
       termBody.appendChild(echo);
 
-      // Process
       const handler = commands[cmd];
       if (handler) {
         const result = handler();
@@ -388,14 +627,13 @@
       } else {
         const el = document.createElement('div');
         el.className = 'term-line';
-        el.innerHTML = `<span class="t-tag">command not found:</span> ${cmd}. Type <span class="t-prompt">help</span> for available commands.`;
+        el.innerHTML = `<span class="t-tag">command not found:</span> ${esc(cmd)}. Type <span class="t-prompt">help</span> for available commands.`;
         termBody.appendChild(el);
       }
 
       termBody.scrollTop = termBody.scrollHeight;
     });
 
-    // Focus terminal on click
     document.querySelector('.term-widget').addEventListener('click', () => termInput.focus());
   </script>
 </body>
