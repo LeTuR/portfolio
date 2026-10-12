@@ -134,70 +134,6 @@
           </div>
         </div>
 
-        <h2 class="reveal">🧪 Also tinkering with</h2>
-        <div class="projects-grid">
-
-          <div class="project-card reveal">
-            <div class="project-visual visual-cluster">
-              <div class="node-grid">
-                <div class="node active"></div><div class="node"></div><div class="node active"></div><div class="node"></div><div class="node active"></div>
-                <div class="node"></div><div class="node active"></div><div class="node"></div><div class="node active"></div><div class="node"></div>
-                <div class="node active"></div><div class="node"></div><div class="node active"></div><div class="node"></div><div class="node active"></div>
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <h3>🏠 Home Lab</h3>
-                <span class="project-badge">Since 2019</span>
-              </div>
-              <p class="project-desc">Bare metal Kubernetes cluster on Talos Linux with full GitOps. ArgoCD reconciles everything from Git.</p>
-              <div class="project-tags"><span>Talos</span><span>Kubernetes</span><span>ArgoCD</span><span>Terraform</span></div>
-            </div>
-          </div>
-
-          <div class="project-card reveal">
-            <div class="project-visual visual-kube">
-              <code><span class="t-prompt">$</span> kubectl get claudecodejobs</code>
-              <code><span class="t-dim">NAME</span>            <span class="t-dim">STATUS</span>    <span class="t-dim">AGE</span></code>
-              <code><span class="t-attr">refactor-api</span>    <span class="t-ok">Running</span>   <span class="t-dim">4m</span></code>
-              <code><span class="t-attr">fix-auth</span>        <span class="t-ok">Running</span>   <span class="t-dim">2m</span></code>
-              <code><span class="t-attr">add-tests</span>       <span class="t-run">Pending</span>   <span class="t-dim">10s</span></code>
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <h3><a href="https://github.com/Thurbeen/thurkube" target="_blank" rel="noopener">☸️ Thurkube</a></h3>
-                <span class="project-badge">Active</span>
-              </div>
-              <p class="project-desc">Kubernetes controller for orchestrating Claude Code agents through a ClaudeCodeJob custom resource.</p>
-              <div class="project-tags"><span>Rust</span><span>Kubernetes</span><span>CRD</span></div>
-            </div>
-          </div>
-
-          <div class="project-card reveal">
-            <div class="project-visual visual-rpg">
-              <div class="rpg-scene">
-                <div class="rpg-grid">
-                  <div class="tile grass"></div><div class="tile grass"></div><div class="tile mountain"></div><div class="tile grass"></div><div class="tile water"></div>
-                  <div class="tile grass"></div><div class="tile unit-ally"></div><div class="tile grass"></div><div class="tile grass"></div><div class="tile grass"></div>
-                  <div class="tile forest"></div><div class="tile grass"></div><div class="tile grass highlight"></div><div class="tile unit-enemy"></div><div class="tile grass"></div>
-                </div>
-                <div class="rpg-hud">
-                  <span class="hud-hp">❤️ 18/20</span>
-                  <span class="hud-turn">⚔️ Turn 3</span>
-                </div>
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <h3>⚔️ Peon Tactics</h3>
-                <span class="project-badge">Learning</span>
-              </div>
-              <p class="project-desc">Hex-based tactical RPG with turn-based combat and character progression. Game dev from scratch.</p>
-              <div class="project-tags"><span>Godot 4</span><span>GDScript</span></div>
-            </div>
-          </div>
-
-        </div>
       </div>
     </section>
 
@@ -363,7 +299,7 @@
             </span>
             <span class="link-body">
               <h3>GitHub</h3>
-              <p>Thurbox, Thurkube, home lab manifests and a graveyard of half-finished experiments.</p>
+              <p>Thurbox and the tools and plugins around it.</p>
               <span class="link-proto muted">Code</span>
             </span>
           </a>
@@ -431,7 +367,7 @@
        animation-play-state off viewport position, so an observer adds
        .is-live. Pausing rather than stopping preserves the phase across
        re-entry. */
-    const sweepPanels = document.querySelectorAll('.term-widget, .feature-terminal, .project-visual');
+    const sweepPanels = document.querySelectorAll('.term-widget, .feature-terminal');
     if (sweepPanels.length && 'IntersectionObserver' in window) {
       const sweepObs = new IntersectionObserver((entries) => {
         entries.forEach(e => e.target.classList.toggle('is-live', e.isIntersecting));
@@ -592,7 +528,7 @@
       help: () => `Available commands:\n  <span class="t-prompt">whoami</span>    — About me\n  <span class="t-prompt">skills</span>    — Tech stack\n  <span class="t-prompt">projects</span>  — Current projects\n  <span class="t-prompt">posts</span>     — Latest Bluesky posts\n  <span class="t-prompt">contact</span>   — How to reach me\n  <span class="t-prompt">neofetch</span>  — System info 🦙\n  <span class="t-prompt">sudo rm -rf /</span> — Don't.\n  <span class="t-prompt">clear</span>     — Clear terminal`,
       whoami: () => `🦙 Arthur Cesare-Herriau\n⚡ DevOps Engineer @ Metyis — Paris\n🎓 ENSEIRB-MATMECA — Electrical Engineering & Robotics\n🤖 Building Thurbox, a TUI agentic IDE\n🐧 I use Arch, btw.`,
       skills: () => `💻 <span class="t-attr">Languages:</span>  Python, Rust, Shell, TypeScript, YAML\n☁️ <span class="t-attr">Cloud:</span>      Azure, Kubernetes, Docker, Terraform\n🔄 <span class="t-attr">CI/CD:</span>      GitHub Actions, GitLab CI, ArgoCD\n🤖 <span class="t-attr">AI:</span>         Claude Code, Azure OpenAI, MCP\n🐧 <span class="t-attr">OS:</span>         Arch Linux (btw.)`,
-      projects: () => `🤖 <a href="https://thurbox.thurbeen.eu/" target="_blank">Thurbox</a>       — TUI agentic IDE, my main project (Rust)\n☸️ <a href="https://github.com/Thurbeen/thurkube" target="_blank">Thurkube</a>      — K8s controller for Claude Code agents (Rust)\n🏠 Home Lab      — Talos K8s cluster, full GitOps\n⚔️ Peon Tactics   — Hex tactical RPG (Godot 4)`,
+      projects: () => `🤖 <a href="https://thurbox.thurbeen.eu/" target="_blank">Thurbox</a> — TUI agentic IDE, my main project (Rust)`,
       posts: () => { document.getElementById('bluesky').scrollIntoView({ behavior: 'smooth' }); return `🦋 Scrolling to the latest posts from <a href="https://bsky.app/profile/magicletur.eurosky.social" target="_blank">@magicletur.eurosky.social</a>...`; },
       contact: () => `🪪 <a href="https://sifa.id/p/arthurcesare.eurosky.social" target="_blank">Sifa</a>         — @arthurcesare.eurosky.social (AT Protocol)\n🦋 <a href="https://bsky.app/profile/magicletur.eurosky.social" target="_blank">Bluesky</a>      — @magicletur.eurosky.social\n🐙 <a href="https://github.com/LeTuR" target="_blank">GitHub</a>       — LeTuR\n💼 <a href="https://www.linkedin.com/in/arthur-cesar%C3%A9-herriau-a4a017153/" target="_blank">LinkedIn</a>     — legacy, but still alive`,
       neofetch: () => `<span class="t-tag">        /\\        </span>  <span class="t-attr">ach</span>@<span class="t-attr">portfolio</span>\n<span class="t-tag">       /  \\       </span>  ──────────────\n<span class="t-tag">      / 🦙 \\      </span>  <span class="t-attr">OS:</span> Arch Linux x86_64\n<span class="t-tag">     /      \\     </span>  <span class="t-attr">Host:</span> Talos K8s Cluster\n<span class="t-tag">    /   Arch  \\    </span>  <span class="t-attr">Kernel:</span> 6.19.9-arch1-1\n<span class="t-tag">   /    Linux  \\   </span>  <span class="t-attr">Shell:</span> zsh 5.9\n<span class="t-tag">  /     btw.    \\  </span>  <span class="t-attr">Editor:</span> Thurbox 🤖\n<span class="t-tag"> /_______________\\ </span>  <span class="t-attr">Theme:</span> Thurarch Doom 🔥`,
